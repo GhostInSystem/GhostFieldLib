@@ -1,0 +1,24 @@
+{
+    "name": "GhostFieldLib",
+    "version": "0.0.0",
+    "description": "A simple lib to build ghostfield system",
+    "keywords": "field, ghost",
+    "dependencies":
+    [
+        {
+            "owner": "bblanchon",
+            "name": "ArduinoJson",
+            "version": "^6.16.1"
+        },
+        {
+            "owner": "Giovanni Blu Mitolo",
+            "name": "gioblu/PJON@",
+            "version": "^13.0"
+        }
+    ],
+    "frameworks": "*",
+    "platforms": "*",
+    "build": {
+        "libArchive": false
+    }    
+}
