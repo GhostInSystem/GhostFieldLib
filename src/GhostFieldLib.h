@@ -4,7 +4,7 @@
  * TODO: add PJON msg receive callback
  * TODO: add SERIAL msg receive callback
  * TODO: write/read serial-uid from eeprom
- * TODO: auto select Value type for device child type 
+ * TODO: auto select Value type for device child type
  * 
  * ***********************************************************/
 #include <Arduino.h>
