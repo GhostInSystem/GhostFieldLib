@@ -4,7 +4,6 @@
  * TODO: add PJON msg receive callback
  * TODO: add SERIAL msg receive callback
  * TODO: write/read serial-uid from eeprom
- * TODO: auto select Value type for device child type
  * 
  * ***********************************************************/
 #include <Arduino.h>
@@ -123,9 +122,17 @@ class GhostFieldDeviceChild
 {
 private:
 public:
+    GhostFieldDeviceChild ();
+    GhostFieldDeviceChild (uint8_t _type, uint8_t _valueType );
     uint8_t valueType;
     uint8_t type;
     uint8_t id;
+};        
+GhostFieldDeviceChild::GhostFieldDeviceChild (){};
+GhostFieldDeviceChild::GhostFieldDeviceChild (uint8_t _type, uint8_t _valueType )
+{
+    this->type = _type;
+    this->valueType = _valueType;
 };
 /**
  **  GhostFieldMsg CLASS *******
@@ -149,8 +156,8 @@ public:
  **  Main *******
 **/
 GhostFieldDevice gDevice;
-GhostFieldDeviceChild gChildUid;
-GhostFieldDeviceChild gChildError;
+GhostFieldDeviceChild gChildUid(GHOSTFIELD_CHILD_UID, GHOSTFIELD_V_UID);
+GhostFieldDeviceChild gChildError( GHOSTFIELD_CHILD_ERROR, GHOSTFIELD_V_EROOR);
 //
 int ittChild = 0;
 bool serialPresent = false;
@@ -161,15 +168,8 @@ bool pjonConnected = false;
 // *******
 PJONSoftwareBitBang bus;
 // *******
-GhostFieldDeviceChild ghostFieldDeviceChildAdd(GhostFieldDeviceChild gChild, uint8_t gChildType, uint8_t gChildValueType)
+GhostFieldDeviceChild ghostFieldDeviceChildAdd(GhostFieldDeviceChild gChild)
 {
-    // ********
-    // TODO: auto select Value type for device vhild type
-    // ********
-    // e.g: ghostFieldDeviceSetup(GHOSTFIELD_DEVICE_RFID_DRIVER);
-    // ********
-    gChild.valueType = gChildValueType;
-    gChild.type = gChildType;
     // increment child id
     gChild.id = ittChild;
     ittChild++;
@@ -322,8 +322,8 @@ void ghostFieldDeviceSetup(uint8_t device_type)
     gDevice.device_type = device_type;
     gDevice.begin();
     // ********
-    gChildError = ghostFieldDeviceChildAdd(gChildError, GHOSTFIELD_CHILD_ERROR, GHOSTFIELD_V_EROOR);
-    gChildUid = ghostFieldDeviceChildAdd(gChildUid, GHOSTFIELD_CHILD_UID, GHOSTFIELD_V_UID);
+    gChildError = ghostFieldDeviceChildAdd(gChildError);
+    gChildUid = ghostFieldDeviceChildAdd(gChildUid);
     // ********
     bus.include_mac(true); // Include MAC address
     bus.set_mac(gDevice.mac);
