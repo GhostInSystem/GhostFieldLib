@@ -1,5 +1,6 @@
 /*************************************************************
  * 
+ * TODO: update TYPES from google sheet
  * TODO: add waiting phase, wait handcheck with PJON MASTER
  * TODO: add PJON msg receive callback
  * TODO: add SERIAL msg receive callback
