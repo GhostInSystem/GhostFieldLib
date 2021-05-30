@@ -16,7 +16,7 @@
             "version": "^13.0"
         }
     ],
-    "frameworks": "[arduino]",
+    "frameworks": ["arduino"],
     "platforms": ["atmelavr", "espressif8266"],
     "build": {
         "libArchive": false
