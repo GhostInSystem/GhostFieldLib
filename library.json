@@ -1,7 +1,7 @@
 {
     "name": "GhostFieldLib",
     "version": "0.0.3",
-    "description": "IoT framework make smart any sensor or actuator",
+    "description": "IoT framework make smart any sensor and actuator",
     "keywords": "field, ghost",
     "authors":{
         "name":"rassaifred"
