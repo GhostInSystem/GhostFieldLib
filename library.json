@@ -1,7 +1,7 @@
 {
     "name": "GhostFieldLib",
-    "version": "0.0.0",
-    "description": "A simple lib to build ghostfield system",
+    "version": "0.0.1",
+    "description": "IoT framework make smart any sensor or actuator",
     "keywords": "field, ghost",
     "dependencies":
     [
@@ -16,8 +16,8 @@
             "version": "^13.0"
         }
     ],
-    "frameworks": "*",
-    "platforms": "*",
+    "frameworks": "[arduino]",
+    "platforms": ["atmelavr", "espressif8266"],
     "build": {
         "libArchive": false
     }    
