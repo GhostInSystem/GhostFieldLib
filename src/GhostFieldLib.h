@@ -1,10 +1,10 @@
 /*************************************************************
  * 
- * TODO: update TYPES from google sheet
- * TODO: add waiting phase, wait handcheck with PJON MASTER
- * TODO: add PJON msg receive callback
- * TODO: add SERIAL msg receive callback
+ * TODO: accord VALUES type to Arduino Data Types
  * TODO: write/read serial-uid from eeprom
+ * TODO: add SERIAL msg receive callback
+ * TODO: add PJON msg receive callback
+ * TODO: add waiting phase, wait handcheck with PJON MASTER
  * 
  * ***********************************************************/
 #include <Arduino.h>
