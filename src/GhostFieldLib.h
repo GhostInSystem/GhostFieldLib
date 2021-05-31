@@ -38,7 +38,7 @@
 /**
  **  LIB VERSION *******
 **/
-#define GHOSTFIELD_LIB_VERSION "0.0.4"
+#define GHOSTFIELD_LIB_VERSION "0.0.5"
 /**
  **  SERIAL SPEED *******
 **/
