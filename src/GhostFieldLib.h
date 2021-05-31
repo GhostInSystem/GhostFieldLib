@@ -174,8 +174,8 @@ public:
  **  Main *******
 **/
 GhostFieldDevice gDevice;
-GhostFieldDeviceChild gChildUid(GHOSTFIELD_CHILD_UID, GHOSTFIELD_V_UID);
-GhostFieldDeviceChild gChildError( GHOSTFIELD_CHILD_ERROR, GHOSTFIELD_V_EROOR);
+GhostFieldDeviceChild gChildUid(GHOSTFIELD_CHILD_UID, GHOSTFIELD_VALUE_UID);
+GhostFieldDeviceChild gChildError( GHOSTFIELD_CHILD_ERROR, GHOSTFIELD_VALUE_ERROR);
 //
 int ittChild = 0;
 bool serialPresent = false;
